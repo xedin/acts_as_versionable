@@ -1,6 +1,8 @@
 # ActsAsVersionable
 module ActsAsVersionable
 
+  class NoSuchVersionError < Exception; end
+  
   def self.included(base)
     base.extend ClassMethods
   end
@@ -30,6 +32,7 @@ module ActsAsVersionable
   end
 
   module InstanceMethods
+
     def version
       current_version || 0
     end
@@ -37,6 +40,8 @@ module ActsAsVersionable
     def revert_to(version)
       revision = versions.find_by_versioned_as(version) 
       
+      raise NoSuchVersionError, "Couldn't find #{version} version"
+
       versions.actual_columns.each do |column|
         self[column.name] = revision[column.name]  
       end
