@@ -8,7 +8,6 @@ coverage/*
 nbproject/*
 db/*.sqlite3
 .svn
-test/**
 db/schema.rb
 public/pictures/**
 config/development.sphinx.conf
