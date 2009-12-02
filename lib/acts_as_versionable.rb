@@ -1,5 +1,3 @@
-require 'migrations'
-
 # ActsAsVersionable
 module ActsAsVersionable
 
@@ -26,7 +24,6 @@ module ActsAsVersionable
         end
       end
 
-      extend Migrations
       include InstanceMethods
     end
 
