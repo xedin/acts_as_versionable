@@ -40,7 +40,7 @@ module ActsAsVersionable
     def revert_to(version)
       revision = versions.find_by_versioned_as(version) 
       
-      raise NoSuchVersionError, "Couldn't find #{version} version"
+      raise NoSuchVersionError, "Couldn't find #{version} version" if revision.blank?
 
       versions.actual_columns.each do |column|
         self[column.name] = revision[column.name]  
@@ -77,4 +77,3 @@ module ActsAsVersionable
 
 end
 
-ActiveRecord::Base.send(:include, ActsAsVersionable)
