@@ -11,8 +11,6 @@ db/*.sqlite3
 test/**
 db/schema.rb
 public/pictures/**
-test/**
-test
 config/development.sphinx.conf
 db/sphinx/*
 *.swp
