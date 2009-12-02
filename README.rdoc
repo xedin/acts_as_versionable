@@ -1,23 +1,23 @@
-== ActsAsVersionable
+= Acts As Versionable
 
-==== Why?
+=== Why?
  Since I found no good plugins/gems I decided to write my own.
 
   * acts_as_versioned does not support current rails with dirty attribute handling
   * version_fu does not provide easy to use sintax
 
-==== Goals?
+=== Goals?
  
   * Tracking the versions.
   * Applying diffs to the versions of to the specific instances of the model.
   * Reverting bitween versions.
   * Will give you possibility track changes on only required fields of your model.
 
-==== Installation
+=== Installation
   
   Simply run `script/plugin install git://github.com/xedin/acts_as_versionable.git`
   
-==== Example
+=== Example
 
   article = Article.create(:title => 'title', :body => 'body')
   article.version => 1
