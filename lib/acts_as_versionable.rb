@@ -34,7 +34,7 @@ module ActsAsVersionable
 
   module InstanceMethods
     def version
-      current_version
+      current_version || 0
     end
 
     def revert_to(version)
